@@ -1,0 +1,39 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xsimples.example.guidewire.net
+spec:
+  group: example.guidewire.net
+  names:
+    kind: xSimple
+    plural: xsimples
+  claimNames:
+    kind: Simple
+    plural: simples
+  versions:
+  - name: v1alpha1
+    served: true
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              foo:
+                type: string
+  - name: v2alpha1
+    served: true
+    referenceable: false
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              foo:
+                type: string
+              bar:
+                type: string

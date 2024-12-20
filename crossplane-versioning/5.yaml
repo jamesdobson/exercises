@@ -1,0 +1,9 @@
+apiVersion: example.guidewire.net/v1alpha1
+kind: Simple
+metadata:
+  name: test-v1
+  namespace: default
+spec:
+  foo: "Hello, World!"
+  compositionRef:
+    name: simple-composition-v1alpha1
